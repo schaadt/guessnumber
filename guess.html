@@ -8,30 +8,56 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gæt et Nummer</title>
 </head>
+
 <body>
+
 <div class="container">
+    <h1>Gæt et Nummer mellem 1 og 10</h1>
+    <p>Du har 3 forsøg til dette</p>
 
-    DETTE ER EN TEST 2wdwd
-
-
-
-<h1>Gæt et Nummer mellem 1 og 10</h1>
-<p>Du har 3 forsøg til dette</p>
 <form>
-<input type="text" class="guess" id="guess">
-<br>
-<br>
-
-<input type="submit" value="Prøv Lykken" id="submitGuess" class="submitGuess">         
-
-
+    <input type="text" class="guess" id="guess">
+    <br>
+    <br>
+    <input type="button" value="Prøv Lykken" id="submitGuess" class="submitGuess">        
 </form>
 
-<script type = "text/javascript">
-    
-    
-</script> 
-
+<br>
+<br>
+<p id="outcome"></p>
 </div>
+
+<script type = "text/javascript">
+    // computeren vælger et tilfældigt nr mellem 1 og 10
+    let comNumber = Math.floor(Math.random() * 10 + 1); 
+    let guess = 1;
+
+    document.getElementById('submitGuess').addEventListener('click', checkGuess);
+
+    // undersøger hvad der er blevet submittet.
+    function checkGuess() {
+
+    // tjekker hvad brugeren indtaster    
+    let userNumber = document.getElementById("guess").value; 
+
+    // Hvis gættet er det samme som computeren    
+    if (userNumber == comNumber)
+    {
+       document.getElementById("outcome").innerHTML = `Tillykke du har gættet rigtigt på ${guess} forsøg`;
+    }
+    // fortæller at gættet skal være lavere
+    else if(userNumber > comNumber) 
+    {     
+       guess++; 
+       document.getElementById("outcome").innerHTML = `for højt, dit sidste gæt var ${userNumber} `;
+    }
+    // fortæller at gættet skal være højere
+    else
+    { 
+       guess++; 
+       document.getElementById("outcome").innerHTML = `for lavt, dit sidste gæt var ${userNumber}`;
+   } 
+}
+</script> 
 </body>
 </html>
