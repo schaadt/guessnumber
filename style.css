@@ -5,6 +5,19 @@ background-color: #22313f;
 font-family: 'Roboto', sans-serif;
 }
 
+.correct{
+    color: chartreuse;
+    margin-top: 0px;
+    font-size: 26px;
+
+}
+
+.fail{
+    color: crimson;
+    margin-top: 0px;
+    font-size: 26px;
+}
+
 h1{
     color:#e4f1fe;
     font-size: 30px;

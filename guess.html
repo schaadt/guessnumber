@@ -32,6 +32,10 @@
     let comNumber = Math.floor(Math.random() * 10 + 1); 
     let guess = 1;
 
+    // Ny functions metode test
+    // Når brugeren har brugt sine forsøg fjerne den muligheden for at trykke igen.
+    const gameOver = () => submitGuess.disabled = true;
+
     document.getElementById('submitGuess').addEventListener('click', checkGuess);
 
     // undersøger hvad der er blevet submittet.
@@ -43,7 +47,8 @@
     // Hvis gættet er det samme som computeren    
     if (userNumber == comNumber)
     {
-       document.getElementById("outcome").innerHTML = `Tillykke du har gættet rigtigt på ${guess} forsøg`;
+       document.getElementById("outcome").innerHTML = `<p class="correct">Tillykke du har gættet rigtigt på ${guess} forsøg</p>`;
+       gameOver(); 
     }
     // fortæller at gættet skal være lavere
     else if(userNumber > comNumber) 
@@ -57,6 +62,12 @@
        guess++; 
        document.getElementById("outcome").innerHTML = `for lavt, dit sidste gæt var ${userNumber}`;
    } 
+
+    //Giver dig 3 forsøg til at gætte
+    if (guess === 4) {
+        document.getElementById("outcome").innerHTML = `<p class="fail">Forkert <br> Du har desværre ikke flere forsøg tilbage prøv igen</p>`;
+        gameOver();
+   }
 }
 </script> 
 </body>
