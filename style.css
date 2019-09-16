@@ -1,3 +1,45 @@
 body{
-    
+margin: 0;
+width: 100%;
+background-color: #22313f;
+font-family: 'Roboto', sans-serif;
 }
+
+h1{
+    color:#e4f1fe;
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+
+p{
+    font-size: 22px;
+    color:#e4f1fe;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitGuess {
+    background-color: #2c82c9;
+    border: none;
+    color:#e4f1fe;
+    padding: 15px 15px;
+    text-align: center;
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+
+  }
+
+  .guess {
+    width: 200px;
+    background-color: #00b5cc;
+    color: aliceblue;
+    font-size: 20px;
+    border: none;
+    padding: 5px;
+  }
